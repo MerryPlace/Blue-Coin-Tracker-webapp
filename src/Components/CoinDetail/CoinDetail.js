@@ -1,0 +1,34 @@
+import React from "react";
+import { NavigationContext } from "../../Context/NavigationProvider";
+
+// import styles from "./CoinDetail.module.scss";
+
+function Template({ coin, guideURL }) {
+  const { navCoin, navLevel } = React.useContext(NavigationContext);
+
+  return (
+    <div>
+      <img
+        src={`${process.env.PUBLIC_URL}/drawable/thumbnail/coin_${navLevel}_${(
+          "0" +
+          (navCoin + 1)
+        ).slice(-2)}.jpg`}
+        alt=""
+      />
+      <h2>{coin.title}</h2>
+      source:<a href={guideURL}>strategywiki.org</a>
+      <p>{coin.desc}</p>
+      <a href={coin.video}>
+        <svg width="72" height="50">
+          <path
+            fill="#FF0000"
+            d="M69.9412,7.8235C69.1177,4.7647 66.7059,2.3529 63.6471,1.5294 58.0588,0 35.7059,0 35.7059,0 35.7059,0 13.3529,0 7.7647,1.4706 4.7647,2.2941 2.2941,4.7647 1.4706,7.8235 0,13.4118 0,25 0,25 0,25 0,36.6471 1.4706,42.1765 2.2941,45.2353 4.7059,47.6471 7.7647,48.4706 13.4118,50 35.7059,50 35.7059,50c0,0 22.3529,0 27.9412,-1.4706 3.0588,-0.8235 5.4706,-3.2353 6.2941,-6.2941 1.4706,-5.5882 1.4706,-17.1765 1.4706,-17.1765 0,0 0.0588,-11.6471 -1.4706,-17.2353z"
+          />
+          <path fill="#FFFFFF" d="M47.1765,25l-18.5882,-10.7059l0,21.4118z" />
+        </svg>
+      </a>
+    </div>
+  );
+}
+
+export default Template;
