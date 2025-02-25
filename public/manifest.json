@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Blue Coin Tracker Web App",
+  "short_name": "Blue Coin",
   "icons": [
     {
       "src": "favicon.ico",
