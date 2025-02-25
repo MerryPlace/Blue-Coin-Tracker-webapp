@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import levels from "./levels.json";
+
+function DataOutput() {
+  return (
+    <div>
+      {Object.keys(levels).map((levelCode) => (
+        <div key={levelCode}>
+          <h2>
+            {levelCode} {levels[levelCode].title}
+          </h2>
+          {levels[levelCode].coins.map((coin, coinNum) => (
+            <p key={coin.title}>
+              {coinNum + 1}. <a href={coin.video}>{coin.title}</a>
+            </p>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DataOutput />
     </div>
   );
 }
