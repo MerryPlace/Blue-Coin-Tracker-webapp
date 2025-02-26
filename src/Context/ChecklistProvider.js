@@ -37,7 +37,7 @@ function ChecklistProvider({ children }) {
           checkedCoins++;
         }
       });
-      return checkedCoins / totalCoins;
+      return Math.floor((checkedCoins / totalCoins) * 100);
     },
     [coinChecklist]
   );
@@ -51,7 +51,7 @@ function ChecklistProvider({ children }) {
         }
       });
     });
-    return checkedCoins / 240.0;
+    return Math.floor((checkedCoins / 240.0) * 100);
   }, [coinChecklist]);
 
   return (

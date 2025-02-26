@@ -1,4 +1,17 @@
 @import "../../globals";
 
-.topribbon {
+.topRibbon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  // padding: 1rem;
+
+  button {
+    height: 2rem;
+  }
+
+  h1 {
+    padding: 0 2rem;
+  }
 }

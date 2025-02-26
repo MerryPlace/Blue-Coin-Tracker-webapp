@@ -10,7 +10,7 @@ function TopRibbon({ levels, toggleTheme }) {
     "Blue Coin Tracker";
 
   return (
-    <div className={styles.topribbon}>
+    <div className={styles.topRibbon}>
       <button
         onClick={() => {
           navBack();
@@ -18,7 +18,7 @@ function TopRibbon({ levels, toggleTheme }) {
       >
         back
       </button>
-      {ribbonTitle}
+      <h1>{ribbonTitle}</h1>
       <button onClick={toggleTheme}>...</button>
     </div>
   );

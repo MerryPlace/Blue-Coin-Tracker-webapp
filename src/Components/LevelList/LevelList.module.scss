@@ -1,1 +1,47 @@
 @import "../../globals";
+
+$grid-gap: 3%;
+
+// @media only screen and (min-width: 600px) {
+// }
+
+.totalCollected {
+  margin-bottom: 2rem;
+  h2 {
+    margin-bottom: 0.5rem;
+    color: var(--color-surface);
+  }
+  progress {
+    width: 50%;
+  }
+}
+
+.level-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $grid-gap;
+  --number-of-items: 3;
+  --number-of-gaps: 2;
+}
+
+.level-container {
+  width: calc(
+    100% / var(--number-of-items) -
+      ($grid-gap * var(--number-of-gaps) / var(--number-of-items))
+  );
+  background-color: (--color-surface);
+  button {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    color: var(--color-text);
+  }
+}
+
+.level-image {
+  width: 100%;
+}
+
+.level-progress {
+  margin-top: 0;
+}
