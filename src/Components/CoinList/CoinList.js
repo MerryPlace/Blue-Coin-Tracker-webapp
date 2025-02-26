@@ -1,10 +1,12 @@
 import React from "react";
 // import styles from "./CoinList.module.scss";
 import { NavigationContext } from "../../Context/NavigationProvider";
+import { ChecklistContext } from "../../Context/ChecklistProvider";
 import CoinDetail from "../CoinDetail";
 
 function CoinList({ level }) {
-  const { navCoin, setNavCoin } = React.useContext(NavigationContext);
+  const { navCoin, navLevel, setNavCoin } = React.useContext(NavigationContext);
+  const { coinChecklist, toggleCoin } = React.useContext(ChecklistContext);
 
   if (navCoin !== null) {
     return <CoinDetail coin={level.coins[navCoin]} guideURL={level.link} />;
@@ -14,7 +16,7 @@ function CoinList({ level }) {
     <div>
       <ol>
         {level.coins.map((coin, coinNum) => (
-          <li>
+          <li key={coinNum}>
             {coin.title} -{" "}
             <button
               onClick={() => {
@@ -23,6 +25,13 @@ function CoinList({ level }) {
             >
               x
             </button>
+            <input
+              checked={coinChecklist[navLevel].coins[coinNum]}
+              type="checkbox"
+              onChange={() => {
+                toggleCoin(navLevel, coinNum);
+              }}
+            />
           </li>
         ))}
       </ol>

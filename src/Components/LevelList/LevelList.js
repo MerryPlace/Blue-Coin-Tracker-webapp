@@ -1,6 +1,7 @@
 import React from "react";
 // import styles from "./LevelList.module.scss";
 import { NavigationContext } from "../../Context/NavigationProvider";
+
 import CoinList from "../CoinList";
 
 function LevelList({ levels }) {
@@ -14,6 +15,7 @@ function LevelList({ levels }) {
     <div>
       {Object.keys(levels).map((levelCode) => (
         <button
+          key={levelCode}
           onClick={() => {
             setNavLevel(levelCode);
           }}
