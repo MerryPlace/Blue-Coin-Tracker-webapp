@@ -6,19 +6,26 @@ import { NavigationContext } from "../../Context/NavigationProvider";
 function Template({ coin, guideURL }) {
   const { navCoin, navLevel } = React.useContext(NavigationContext);
 
+  const rootURL = process.env.PUBLIC_URL;
+  const imageFile = `coin_${navLevel}_${("0" + (navCoin + 1)).slice(-2)}.jpg`;
+  const mobileImageURL = `${rootURL}/drawable/coin-location/mobile/${imageFile}`;
+  const desktopImageURL = `${rootURL}/drawable/coin-location/${imageFile}`;
+
   return (
     <div>
       <img
-        src={`${process.env.PUBLIC_URL}/drawable/thumbnail/coin_${navLevel}_${(
-          "0" +
-          (navCoin + 1)
-        ).slice(-2)}.jpg`}
+        srcset={`${mobileImageURL} 640w, ${desktopImageURL} 1280w`}
+        sizes="(max-width: 640px) 100vw, 800px"
+        src={desktopImageURL}
         alt=""
       />
       <h2>{coin.title}</h2>
-      source:<a href={guideURL}>strategywiki.org</a>
+      source:
+      <a href={guideURL} target="_blank" rel="noreferrer">
+        strategywiki.org
+      </a>
       <p>{coin.desc}</p>
-      <a href={coin.video}>
+      <a href={coin.video} target="_blank" rel="noreferrer">
         <svg width="72" height="50">
           <path
             fill="#FF0000"
