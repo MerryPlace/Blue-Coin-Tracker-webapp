@@ -1,9 +1,10 @@
 import React from "react";
 import { NavigationContext } from "../../Context/NavigationProvider";
+import BlueCoinCheckbox from "../BlueCoinCheckbox";
 
 // import styles from "./CoinDetail.module.scss";
 
-function Template({ coin, guideURL }) {
+function Template({ coin, guideURL, coinChecked, onCoinChange }) {
   const { navCoin, navLevel } = React.useContext(NavigationContext);
 
   const rootURL = process.env.PUBLIC_URL;
@@ -20,6 +21,7 @@ function Template({ coin, guideURL }) {
         alt=""
       />
       <h2>{coin.title}</h2>
+      <BlueCoinCheckbox checked={coinChecked} onChange={onCoinChange} />
       source:
       <a href={guideURL} target="_blank" rel="noreferrer">
         strategywiki.org

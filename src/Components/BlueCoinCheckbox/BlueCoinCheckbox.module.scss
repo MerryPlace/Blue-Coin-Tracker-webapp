@@ -1,0 +1,38 @@
+@import "../../globals";
+$off-total: "/drawable/coin/btn_small_coin_off_48.png";
+$off-highlight: "/drawable/coin/btn_small_coin_off_disabled_48.png";
+$off-half: "/drawable/coin/btn_small_coin_off_pressed_48.png";
+$on-highlight: "/drawable/coin/btn_small_coin_on_48.png";
+$on-barely: "/drawable/coin/btn_small_coin_on_disabled_48.png";
+$on-half: "/drawable/coin/btn_small_coin_on_pressed_48.png";
+
+.custom-checkboxes {
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .bc-checkbox {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-image: url($off-total);
+    background-size: cover;
+    cursor: pointer;
+  }
+  input[type="checkbox"]:hover + .bc-checkbox {
+    background-image: url($off-highlight);
+  }
+  input[type="checkbox"]:active + .bc-checkbox {
+    background-image: url($off-half);
+  }
+
+  input[type="checkbox"]:checked + .bc-checkbox {
+    background-image: url($on-half);
+  }
+  input[type="checkbox"]:checked:hover + .bc-checkbox {
+    background-image: url($on-highlight);
+  }
+  input[type="checkbox"]:checked:active + .bc-checkbox {
+    background-image: url($on-barely);
+  }
+}
