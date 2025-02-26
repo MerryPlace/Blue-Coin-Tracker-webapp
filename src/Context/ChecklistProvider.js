@@ -2,10 +2,23 @@ import React from "react";
 import emptyList from "../emptyList.json";
 import { produce } from "immer";
 
+const CHECKLIST_KEY = "BC_CHECKLIST";
 export const ChecklistContext = React.createContext();
 
 function ChecklistProvider({ children }) {
-  const [coinChecklist, setCoinChecklist] = React.useState(emptyList);
+  const [coinChecklist, setCoinChecklist] = React.useState(() => {
+    const localData = JSON.parse(localStorage.getItem(CHECKLIST_KEY));
+    console.log(
+      `Setting checkbox state ${localData === null ? "fresh" : "from storage"}`
+    );
+    return localData === null ? emptyList : localData;
+  });
+
+  React.useEffect(() => {
+    if (!!coinChecklist) {
+      localStorage.setItem(CHECKLIST_KEY, JSON.stringify(coinChecklist));
+    }
+  }, [coinChecklist]);
 
   const toggleCoin = React.useCallback((levelCode, coinNum) => {
     setCoinChecklist(
