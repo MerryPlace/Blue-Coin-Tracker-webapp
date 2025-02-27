@@ -1,17 +1,21 @@
 @import "../../globals";
 
 $blueCoinSize: 48px;
+$gap: 0.5rem;
 
 .coinList {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: $gap;
   align-items: start;
+  padding: $gap;
 }
 .coinItem {
   display: flex;
   height: $blueCoinSize;
   width: 100%;
+  max-width: 400px;
+  margin: auto;
   border-radius: 4px;
   background-color: var(--color-surface);
   text-align: start;

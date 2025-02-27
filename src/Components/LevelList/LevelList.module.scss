@@ -22,6 +22,7 @@ $grid-gap: 3%;
   display: flex;
   flex-wrap: wrap;
   gap: $grid-gap;
+  padding: $grid-gap;
   --number-of-items: 3;
   --number-of-gaps: 2;
 }
