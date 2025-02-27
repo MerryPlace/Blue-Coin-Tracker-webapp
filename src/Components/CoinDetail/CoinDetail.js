@@ -1,8 +1,9 @@
 import React from "react";
 import { NavigationContext } from "../../Context/NavigationProvider";
 import BlueCoinCheckbox from "../BlueCoinCheckbox";
+import StyledText from "../StyledText";
 
-// import styles from "./CoinDetail.module.scss";
+import styles from "./CoinDetail.module.scss";
 
 function Template({ coin, guideURL, coinChecked, onCoinChange }) {
   const { navCoin, navLevel } = React.useContext(NavigationContext);
@@ -13,20 +14,26 @@ function Template({ coin, guideURL, coinChecked, onCoinChange }) {
   const desktopImageURL = `${rootURL}/drawable/coin-location/${imageFile}`;
 
   return (
-    <div>
-      <img
-        srcset={`${mobileImageURL} 640w, ${desktopImageURL} 1280w`}
-        sizes="(max-width: 640px) 100vw, 800px"
-        src={desktopImageURL}
-        alt=""
-      />
+    <div className={styles.coinDetailPage}>
+      <div className={styles.header}>
+        <img
+          srcset={`${mobileImageURL} 640w, ${desktopImageURL} 1280w`}
+          sizes="(max-width: 640px) 100vw, 800px"
+          src={desktopImageURL}
+          alt=""
+        />
+      </div>
       <h2>{coin.title}</h2>
       <BlueCoinCheckbox checked={coinChecked} onChange={onCoinChange} />
       source:
       <a href={guideURL} target="_blank" rel="noreferrer">
         strategywiki.org
       </a>
-      <p>{coin.desc}</p>
+      <pre className={styles.description}>
+        <p>
+          <StyledText unstyledText={coin.desc} />
+        </p>
+      </pre>
       <a href={coin.video} target="_blank" rel="noreferrer">
         <svg width="72" height="50">
           <path

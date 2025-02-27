@@ -1,1 +1,20 @@
 @import "../../globals";
+
+.coinDetailPage {
+}
+
+.header {
+  background-color: black;
+  max-height: 450px;
+  img {
+    display: block;
+    height: 100%;
+  }
+}
+
+.description {
+  text-align: left;
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  padding: 0 2rem;
+}
