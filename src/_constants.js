@@ -1,7 +1,7 @@
 export const DARK_COLORS = {
   "--color-text": "#ffffff",
   "--color-background": "#303030",
-  "--color-surface": "#555555",
+  "--color-surface": "#424242",
   "--color-primary": "#3e5fd5",
   "--color-secondary": "#22268c",
 };

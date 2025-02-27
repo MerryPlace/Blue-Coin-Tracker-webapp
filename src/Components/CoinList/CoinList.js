@@ -1,5 +1,5 @@
 import React from "react";
-// import styles from "./CoinList.module.scss";
+import styles from "./CoinList.module.scss";
 import { NavigationContext } from "../../Context/NavigationProvider";
 import { ChecklistContext } from "../../Context/ChecklistProvider";
 import CoinDetail from "../CoinDetail";
@@ -23,27 +23,26 @@ function CoinList({ level }) {
   }
 
   return (
-    <div>
-      <ol>
-        {level.coins.map((coin, coinNum) => (
-          <li key={coinNum}>
-            {coin.title} -{" "}
-            <button
-              onClick={() => {
-                setNavCoin(coinNum);
-              }}
-            >
-              x
-            </button>
+    <div className={styles.coinList}>
+      {level.coins.map((coin, coinNum) => (
+        <div className={styles.coinItem} key={coinNum}>
+          <div className={styles.checkboxWrapper}>
             <BlueCoinCheckbox
               checked={coinChecklist[navLevel].coins[coinNum]}
               onChange={() => {
                 toggleCoin(navLevel, coinNum);
               }}
             />
-          </li>
-        ))}
-      </ol>
+          </div>
+          <button
+            onClick={() => {
+              setNavCoin(coinNum);
+            }}
+          >
+            <div className={styles.coinTitle}>{coin.title}</div>
+          </button>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,1 +1,44 @@
 @import "../../globals";
+
+$blueCoinSize: 48px;
+
+.coinList {
+  display: flex;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: start;
+}
+.coinItem {
+  display: flex;
+  height: $blueCoinSize;
+  width: 100%;
+  border-radius: 4px;
+  background-color: var(--color-surface);
+  text-align: start;
+  padding: 1px;
+
+  button {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    width: 100%;
+    color: inherit;
+    text-align: inherit;
+  }
+}
+
+.checkboxWrapper {
+  label {
+    padding: 0rem 0.25rem;
+  }
+
+  span {
+    width: $blueCoinSize;
+    height: $blueCoinSize;
+  }
+}
+
+.coinTitle {
+  font-weight: 600;
+}

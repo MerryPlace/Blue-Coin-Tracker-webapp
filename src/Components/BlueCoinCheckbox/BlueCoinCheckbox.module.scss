@@ -7,32 +7,39 @@ $on-barely: "/drawable/coin/btn_small_coin_on_disabled_48.png";
 $on-half: "/drawable/coin/btn_small_coin_on_pressed_48.png";
 
 .custom-checkboxes {
+  .bcCheckboxWrapper {
+    position: relative;
+  }
+
   input[type="checkbox"] {
-    display: none;
+    position: absolute;
+    left: -9999px;
   }
 
   .bc-checkbox {
     display: inline-block;
-    width: 48px;
-    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
     background-image: url($off-total);
     background-size: cover;
     cursor: pointer;
   }
-  input[type="checkbox"]:hover + .bc-checkbox {
+  input[type="checkbox"]:hover + label > .bc-checkbox,
+  input[type="checkbox"]:focus-visible + label > .bc-checkbox {
     background-image: url($off-highlight);
   }
-  input[type="checkbox"]:active + .bc-checkbox {
+  input[type="checkbox"]:active + label > .bc-checkbox {
     background-image: url($off-half);
   }
 
-  input[type="checkbox"]:checked + .bc-checkbox {
+  input[type="checkbox"]:checked + label > .bc-checkbox {
     background-image: url($on-half);
   }
-  input[type="checkbox"]:checked:hover + .bc-checkbox {
+  input[type="checkbox"]:checked:hover + label > .bc-checkbox,
+  input[type="checkbox"]:checked:focus-visible + label > .bc-checkbox {
     background-image: url($on-highlight);
   }
-  input[type="checkbox"]:checked:active + .bc-checkbox {
+  input[type="checkbox"]:checked:active + label > .bc-checkbox {
     background-image: url($on-barely);
   }
 }
