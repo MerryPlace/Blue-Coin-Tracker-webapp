@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/blue-coin-tracker-webapp/static/css/main.d48852d0.css",
-    "main.js": "/blue-coin-tracker-webapp/static/js/main.24036dc5.js",
+    "main.css": "/blue-coin-tracker-webapp/static/css/main.6bfcbc0b.css",
+    "main.js": "/blue-coin-tracker-webapp/static/js/main.3a181551.js",
     "index.html": "/blue-coin-tracker-webapp/index.html",
-    "main.d48852d0.css.map": "/blue-coin-tracker-webapp/static/css/main.d48852d0.css.map",
-    "main.24036dc5.js.map": "/blue-coin-tracker-webapp/static/js/main.24036dc5.js.map"
+    "main.6bfcbc0b.css.map": "/blue-coin-tracker-webapp/static/css/main.6bfcbc0b.css.map",
+    "main.3a181551.js.map": "/blue-coin-tracker-webapp/static/js/main.3a181551.js.map"
   },
   "entrypoints": [
-    "static/css/main.d48852d0.css",
-    "static/js/main.24036dc5.js"
+    "static/css/main.6bfcbc0b.css",
+    "static/js/main.3a181551.js"
   ]
 }
