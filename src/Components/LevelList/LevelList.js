@@ -11,44 +11,46 @@ function LevelList({ levels }) {
     React.useContext(ChecklistContext);
 
   const totalComplete = getTotalCompletion();
-
-  if (navLevel !== null) {
-    return <CoinList level={levels[navLevel]} />;
-  }
-
   return (
-    <div>
-      <div className={styles.totalCollected}>
-        <h2>
-          <label for="totalComplete">You've collected {totalComplete}%</label>
-        </h2>
-        <progress id="totalComplete" value={totalComplete} max="100"></progress>
-      </div>
+    <>
+      {navLevel !== null && <CoinList level={levels[navLevel]} />}
+      <div className={navLevel !== null && styles.hidden}>
+        <div className={styles.totalCollected}>
+          <h2>
+            <label for="totalComplete">You've collected {totalComplete}%</label>
+          </h2>
+          <progress
+            id="totalComplete"
+            value={totalComplete}
+            max="100"
+          ></progress>
+        </div>
 
-      <div className={styles["level-list-container"]}>
-        {["dp", "bh", "rh", "gb", "nb", "pp", "sb", "pv", "cm"].map(
-          (levelCode) => (
-            <div className={styles["level-container"]}>
-              <button
-                key={levelCode}
-                onClick={() => {
-                  setNavLevel(levelCode);
-                }}
-              >
-                <img
-                  className={styles["level-image"]}
-                  src={`${process.env.PUBLIC_URL}/drawable/home/home_${levelCode}.png`}
-                  alt={levels[levelCode].title}
-                />
-                <p className={styles["level-progress"]}>
-                  {getLevelCompletion(levelCode)}%
-                </p>
-              </button>
-            </div>
-          )
-        )}
+        <div className={styles["level-list-container"]}>
+          {["dp", "bh", "rh", "gb", "nb", "pp", "sb", "pv", "cm"].map(
+            (levelCode) => (
+              <div className={styles["level-container"]}>
+                <button
+                  key={levelCode}
+                  onClick={() => {
+                    setNavLevel(levelCode);
+                  }}
+                >
+                  <img
+                    className={styles["level-image"]}
+                    src={`${process.env.PUBLIC_URL}/drawable/home/home_${levelCode}.png`}
+                    alt={levels[levelCode].title}
+                  />
+                  <p className={styles["level-progress"]}>
+                    {getLevelCompletion(levelCode)}%
+                  </p>
+                </button>
+              </div>
+            )
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
