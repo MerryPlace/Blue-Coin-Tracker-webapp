@@ -7,7 +7,6 @@ function NavigationProvider({ children }) {
   const [navCoin, setNavCoin] = React.useState(null);
 
   const navBack = () => {
-    console.log("nav back");
     if (navCoin !== null) {
       setNavCoin(null);
     } else if (navLevel !== null) {
