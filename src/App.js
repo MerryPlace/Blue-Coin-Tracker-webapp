@@ -24,7 +24,7 @@ function App() {
               });
             }}
           />
-          <div className={`${bcStyles["custom-checkboxes"]}`}>
+          <div className={`pageWrapper ${bcStyles["custom-checkboxes"]}`}>
             <LevelList levels={levels} />
           </div>
         </ChecklistProvider>

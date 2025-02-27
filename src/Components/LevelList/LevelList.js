@@ -26,25 +26,27 @@ function LevelList({ levels }) {
       </div>
 
       <div className={styles["level-list-container"]}>
-        {Object.keys(levels).map((levelCode) => (
-          <div className={styles["level-container"]}>
-            <button
-              key={levelCode}
-              onClick={() => {
-                setNavLevel(levelCode);
-              }}
-            >
-              <img
-                className={styles["level-image"]}
-                src={`${process.env.PUBLIC_URL}/drawable/home/home_${levelCode}.png`}
-                alt={levels[levelCode].title}
-              />
-              <p className={styles["level-progress"]}>
-                {getLevelCompletion(levelCode)}%
-              </p>
-            </button>
-          </div>
-        ))}
+        {["dp", "bh", "rh", "gb", "nb", "pp", "sb", "pv", "cm"].map(
+          (levelCode) => (
+            <div className={styles["level-container"]}>
+              <button
+                key={levelCode}
+                onClick={() => {
+                  setNavLevel(levelCode);
+                }}
+              >
+                <img
+                  className={styles["level-image"]}
+                  src={`${process.env.PUBLIC_URL}/drawable/home/home_${levelCode}.png`}
+                  alt={levels[levelCode].title}
+                />
+                <p className={styles["level-progress"]}>
+                  {getLevelCompletion(levelCode)}%
+                </p>
+              </button>
+            </div>
+          )
+        )}
       </div>
     </div>
   );

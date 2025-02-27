@@ -24,6 +24,12 @@ $on-half: "/drawable/coin/btn_small_coin_on_pressed_48.png";
     background-size: cover;
     cursor: pointer;
   }
+
+  input[type="checkbox"]:focus-visible + label > .bc-checkbox {
+    outline: 1px solid var(--color-text);
+    outline-offset: 2px;
+  }
+
   input[type="checkbox"]:hover + label > .bc-checkbox,
   input[type="checkbox"]:focus-visible + label > .bc-checkbox {
     background-image: url($off-highlight);
