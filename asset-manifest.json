@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/blue-coin-tracker-webapp/static/css/main.6bfcbc0b.css",
-    "main.js": "/blue-coin-tracker-webapp/static/js/main.3a181551.js",
+    "main.css": "/blue-coin-tracker-webapp/static/css/main.adceab5e.css",
+    "main.js": "/blue-coin-tracker-webapp/static/js/main.4d1d4bc3.js",
+    "static/media/sunshine.ttf": "/blue-coin-tracker-webapp/static/media/sunshine.a6feb2dbb22d5d6e7059.ttf",
+    "static/media/download.svg": "/blue-coin-tracker-webapp/static/media/download.0271dbf9f1db20d543e0a2e8f9151bea.svg",
     "index.html": "/blue-coin-tracker-webapp/index.html",
-    "main.6bfcbc0b.css.map": "/blue-coin-tracker-webapp/static/css/main.6bfcbc0b.css.map",
-    "main.3a181551.js.map": "/blue-coin-tracker-webapp/static/js/main.3a181551.js.map"
+    "static/media/image.svg": "/blue-coin-tracker-webapp/static/media/image.8c792d2825eab7cef6ba86b8b4aa3336.svg",
+    "static/media/upload.svg": "/blue-coin-tracker-webapp/static/media/upload.4494b3e098131bd984859b468efab50a.svg",
+    "static/media/video.svg": "/blue-coin-tracker-webapp/static/media/video.7db8f895c2fc9c5b79fd217f6ad9d848.svg",
+    "main.adceab5e.css.map": "/blue-coin-tracker-webapp/static/css/main.adceab5e.css.map",
+    "main.4d1d4bc3.js.map": "/blue-coin-tracker-webapp/static/js/main.4d1d4bc3.js.map"
   },
   "entrypoints": [
-    "static/css/main.6bfcbc0b.css",
-    "static/js/main.3a181551.js"
+    "static/css/main.adceab5e.css",
+    "static/js/main.4d1d4bc3.js"
   ]
 }
