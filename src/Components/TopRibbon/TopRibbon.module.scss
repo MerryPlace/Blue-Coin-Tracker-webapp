@@ -16,11 +16,28 @@
     height: 2rem;
   }
 
+  .title {
+    text-overflow: ellipsis;
+
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 2rem;
+  }
+
   h1 {
     margin: 0;
-    font-weight: 100;
-    font-family: "sunshine";
+    // font-family: "sunshine";
     color: white;
-    padding: 0 2rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    h1 {
+      font-size: larger;
+    }
+
+    .title {
+      margin: 0 0.5rem;
+    }
   }
 }

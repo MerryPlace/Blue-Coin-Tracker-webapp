@@ -6,7 +6,7 @@ $grid-gap: 3%;
 // }
 
 .totalCollected {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   h2 {
     margin-bottom: 0.5rem;
     font-weight: 500;
@@ -20,11 +20,17 @@ $grid-gap: 3%;
 
 .level-list-container {
   display: flex;
+  max-width: 60%;
+  margin: auto;
   flex-wrap: wrap;
   gap: $grid-gap;
   padding: $grid-gap;
   --number-of-items: 3;
   --number-of-gaps: 2;
+
+  @media screen and (max-width: 800px) {
+    max-width: 100%;
+  }
 }
 
 .level-container {

@@ -11,9 +11,9 @@ export const DARK_COLORS = {
 export const LIGHT_COLORS = {
   "--color-text": "hsl(0deg 0% 5%)",
   "--color-emphasis": "hsl(0deg 0% 5%)",
-  "--color-background": "hsl(230deg 20% 95%)",
+  "--color-background": "#dedee0",
   "--color-surface": "#ffffff",
-  "--color-accent": "#aaaaaa",
+  "--color-accent": "#606060",
   "--color-primary": "#3e5fd5",
   "--color-secondary": "hsl(345deg 100% 50%)",
 };
