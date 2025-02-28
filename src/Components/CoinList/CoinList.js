@@ -13,8 +13,8 @@ function CoinList({ level }) {
   const [selectedCoin, setSelectedCoin] = React.useState(null);
 
   React.useEffect(() => {
-    if (navCoin === null && selectedCoin !== null) {
-      itemRefs.current[selectedCoin].scrollIntoView();
+    if (navCoin === null && !!selectedCoin) {
+      itemRefs.current[selectedCoin - 1].scrollIntoView();
     }
   }, [selectedCoin, navCoin, itemRefs]);
 
