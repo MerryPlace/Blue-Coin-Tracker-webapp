@@ -11,9 +11,13 @@ import { DARK_COLORS, LIGHT_COLORS } from "./_constants";
 function App() {
   const [theme, setTheme] = React.useState("dark");
   const themeColors = theme === "dark" ? DARK_COLORS : LIGHT_COLORS;
+  const [font, setFont] = React.useState("sunshine");
 
   return (
-    <div className="App" style={themeColors}>
+    <div
+      className={`App ${font === "sunshine" && "useSunshineFont"}`}
+      style={themeColors}
+    >
       <NavigationProvider>
         <ChecklistProvider>
           <TopRibbon

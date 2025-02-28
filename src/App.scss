@@ -1,3 +1,10 @@
+@import "./globals";
+
+@font-face {
+  font-family: Sunshine;
+  src: url("./fonts/sunshine.ttf");
+}
+
 html,
 body,
 #root {
@@ -9,10 +16,20 @@ body,
   text-align: center;
   background-color: var(--color-background);
   color: var(--color-text);
+
+  * {
+    font-family: "Roboto", sans-serif;
+  }
+
+  &.useSunshineFont {
+    * {
+      font-family: "Sunshine", sans-serif;
+    }
+  }
 }
 
 .pageWrapper {
-  // padding: 0.5rem;
+  padding-top: $topRibbonHeight;
   max-width: 1200px;
   margin: auto;
 }
