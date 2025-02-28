@@ -1,6 +1,7 @@
 @import "../../globals";
 
 $blueCoinSize: 48px;
+$checkboxSize: $blueCoinSize - 6px;
 $gap: 0.5rem;
 
 .coinList {
@@ -40,8 +41,13 @@ $gap: 0.5rem;
     width: $blueCoinSize;
     height: $blueCoinSize;
   }
+
+  input {
+    width: $checkboxSize;
+    height: $checkboxSize;
+  }
 }
 
 .coinTitle {
-  font-weight: 600;
+  font-size: 1.5em;
 }
