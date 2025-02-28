@@ -12,6 +12,7 @@ function App() {
   const [theme, setTheme] = React.useState("dark");
   const themeColors = theme === "dark" ? DARK_COLORS : LIGHT_COLORS;
   const [font, setFont] = React.useState("sunshine");
+  const [themeCheckbox, setThemeCheckbox] = React.useState(true);
 
   return (
     <div
@@ -23,12 +24,18 @@ function App() {
           <TopRibbon
             levels={levels}
             toggleTheme={() => {
+              setThemeCheckbox((theme) => !theme);
+
               setTheme((theme) => {
                 return theme === "dark" ? "light" : "dark";
               });
             }}
           />
-          <div className={`pageWrapper ${bcStyles["custom-checkboxes"]}`}>
+          <div
+            className={`pageWrapper ${
+              themeCheckbox && bcStyles["custom-checkboxes"]
+            }`}
+          >
             <LevelList levels={levels} />
           </div>
         </ChecklistProvider>
