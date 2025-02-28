@@ -55,9 +55,9 @@ function ChecklistProvider({ children }) {
   }, [coinChecklist]);
 
   const uploadSave = React.useCallback((saveData) => {
-    console.log({ saveData });
     if (Array.isArray(saveData?.dp?.coins)) {
       setCoinChecklist(saveData);
+      console.log("successful upload");
       return true;
     }
     return false;
