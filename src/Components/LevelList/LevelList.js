@@ -17,7 +17,11 @@ function LevelList({ levels }) {
       <div className={(navLevel !== null && styles.hidden) || undefined}>
         <div className={styles.totalCollected}>
           <h2>
-            <label htmlFor="totalComplete">Coin {totalComplete}% Get!</label>
+            <label htmlFor="totalComplete">
+              {totalComplete === 100
+                ? "Congrats on 100%!!!"
+                : `Coin ${totalComplete}% Get!`}
+            </label>
           </h2>
           <progress
             id="totalComplete"
