@@ -1,5 +1,6 @@
 export const DARK_COLORS = {
   "--color-text": "#ffffff",
+  "--color-emphasis": "#ffffff",
   "--color-background": "#303030",
   "--color-surface": "#424242",
   "--color-accent": "#aaaaaa",
@@ -9,6 +10,7 @@ export const DARK_COLORS = {
 
 export const LIGHT_COLORS = {
   "--color-text": "hsl(0deg 0% 5%)",
+  "--color-emphasis": "hsl(0deg 0% 5%)",
   "--color-background": "hsl(230deg 20% 95%)",
   "--color-surface": "#ffffff",
   "--color-accent": "#aaaaaa",

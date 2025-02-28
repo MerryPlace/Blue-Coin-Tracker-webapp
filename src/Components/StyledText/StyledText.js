@@ -9,7 +9,7 @@ function StyledText({ unstyledText }) {
     <>
       {splitText.map((part, index) => {
         if (part.startsWith("*") && part.endsWith("*")) {
-          return <i key={index}>{part.slice(1, -1)}</i>;
+          return <em key={index}>{part.slice(1, -1)}</em>;
         } else if (part.startsWith("__") && part.endsWith("__")) {
           return <strong key={index}>{part.slice(2, -2)}</strong>;
         } else {

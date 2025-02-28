@@ -1,20 +1,112 @@
 @import "../../globals";
 
+$content-width: 682px;
+
 .coinDetailPage {
+  background-color: var(--color-surface);
+  max-width: 800px;
+  margin: auto;
+  // height: 100%;
+
+  hr {
+    margin: 0;
+  }
 }
 
-.header {
-  background-color: black;
+.media {
+  height: min(50vw, 40vh);
   max-height: 450px;
-  img {
-    display: block;
+  background-color: black;
+  img,
+  iframe {
     height: 100%;
+    display: block;
+    margin: auto;
+  }
+  iframe {
+    aspect-ratio: 01.77;
+  }
+}
+
+.headerWrapper {
+  // background-color: aliceblue;
+  height: 52px;
+  // max-width: $content-width;
+  max-width: $content-width;
+  padding: 0 0.5rem;
+  margin: auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  // background-color: rgb(79, 108, 133);
+  height: 100%;
+  // margin: 0 0.5rem;
+
+  button {
+    display: flex;
+    // float: inline-start;
+    margin: 0.5rem 0;
+  }
+}
+
+$coinSize: 48px;
+$checkbox-size: $coinSize - 6;
+.checkBoxWrapper {
+  display: flex;
+  align-items: center;
+  input {
+    width: $checkbox-size;
+    height: $checkbox-size;
+  }
+  span {
+    padding-top: 2px;
+    width: $coinSize;
+    height: $coinSize;
+  }
+}
+
+$icon-size: 16px;
+.mediaToggle {
+  display: flexbox;
+  align-items: center;
+  img {
+    display: inline;
+    width: $icon-size;
+    height: $icon-size;
+    padding: 0.25rem;
   }
 }
 
 .description {
+  max-width: $content-width;
+  margin: auto;
   text-align: left;
   white-space: pre-wrap; /* Since CSS 2.1 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
-  padding: 0 2rem;
+  padding: 0 0.5rem 1rem;
+
+  a {
+    color: var(--color-primary);
+  }
+
+  strong {
+    // color: red;
+    font-weight: 600;
+  }
+
+  em {
+    color: var(--color-emphasis);
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .description {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .headerWrapper {
+    padding: 0 2rem;
+  }
 }
