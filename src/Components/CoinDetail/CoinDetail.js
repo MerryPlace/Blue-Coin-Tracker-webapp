@@ -72,6 +72,7 @@ function MediaArea({ navLevel, navCoin, coin, showVideo }) {
         <iframe
           src={`https://www.youtube.com/embed/${coin.video}`}
           title="YouTube video player"
+          noborder={true}
           allow="fullscreen; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
         ></iframe>
