@@ -54,6 +54,15 @@ function ChecklistProvider({ children }) {
     return Math.floor((checkedCoins / 240.0) * 100);
   }, [coinChecklist]);
 
+  const uploadSave = React.useCallback((saveData) => {
+    console.log({ saveData });
+    if (Array.isArray(saveData?.dp?.coins)) {
+      setCoinChecklist(saveData);
+      return true;
+    }
+    return false;
+  }, []);
+
   return (
     <ChecklistContext.Provider
       value={{
@@ -61,6 +70,7 @@ function ChecklistProvider({ children }) {
         toggleCoin,
         getLevelCompletion,
         getTotalCompletion,
+        uploadSave,
       }}
     >
       {children}

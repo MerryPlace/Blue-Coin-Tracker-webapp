@@ -7,28 +7,47 @@ import React from "react";
 import bcStyles from "./Components/BlueCoinCheckbox/BlueCoinCheckbox.module.scss";
 import "./App.scss";
 import { DARK_COLORS, LIGHT_COLORS } from "./_constants";
+import SettingsPopup from "./Components/SettingsPopup/SettingsPopup";
 
 function App() {
   const [theme, setTheme] = React.useState("dark");
   const themeColors = theme === "dark" ? DARK_COLORS : LIGHT_COLORS;
   const [font, setFont] = React.useState("sunshine");
   const [themeCheckbox, setThemeCheckbox] = React.useState(true);
+  const [settingsVisible, setSettingsVisible] = React.useState(false);
 
   return (
     <div
       className={`App ${font === "sunshine" && "useSunshineFont"}`}
       style={themeColors}
     >
-      <NavigationProvider>
-        <ChecklistProvider>
+      <ChecklistProvider>
+        {settingsVisible && (
+          <SettingsPopup
+            closeSettings={() => {
+              setSettingsVisible(false);
+            }}
+            fontCheck={font === "sunshine"}
+            fontToggle={() => {
+              const newFont = font === "sunshine" ? "default" : "sunshine";
+              setFont(newFont);
+            }}
+            checkboxCheck={themeCheckbox}
+            checkboxToggle={() => {
+              setThemeCheckbox(!themeCheckbox);
+            }}
+            themeCheck={theme === "dark"}
+            themeToggle={() => {
+              const newTheme = theme === "dark" ? "light" : "dark";
+              setTheme(newTheme);
+            }}
+          />
+        )}
+        <NavigationProvider>
           <TopRibbon
             levels={levels}
-            toggleTheme={() => {
-              setThemeCheckbox((theme) => !theme);
-
-              setTheme((theme) => {
-                return theme === "dark" ? "light" : "dark";
-              });
+            openSettings={() => {
+              setSettingsVisible(true);
             }}
           />
           <div
@@ -38,8 +57,8 @@ function App() {
           >
             <LevelList levels={levels} />
           </div>
-        </ChecklistProvider>
-      </NavigationProvider>
+        </NavigationProvider>
+      </ChecklistProvider>
     </div>
   );
 }

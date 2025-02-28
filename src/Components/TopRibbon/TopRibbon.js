@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./TopRibbon.module.scss";
 import { NavigationContext } from "../../Context/NavigationProvider";
 
-function TopRibbon({ levels, toggleTheme }) {
+function TopRibbon({ levels, openSettings }) {
   const { navBack, navLevel, navCoin } = React.useContext(NavigationContext);
   const ribbonTitle =
     levels[navLevel]?.coins[navCoin]?.title ||
@@ -18,8 +18,10 @@ function TopRibbon({ levels, toggleTheme }) {
       >
         back
       </button>
-      <h1>{ribbonTitle}</h1>
-      <button onClick={toggleTheme}>...</button>
+      <div className={styles.title}>
+        <h1>{ribbonTitle}</h1>
+      </div>
+      <button onClick={openSettings}>...</button>
     </div>
   );
 }

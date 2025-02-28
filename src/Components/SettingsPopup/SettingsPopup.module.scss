@@ -1,0 +1,76 @@
+@import "../../globals";
+
+.fullscreenOverlay {
+  background-color: rgba(0, 0, 0, 0.589);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.settingsPopup {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 90%; /* 100% width */
+  max-width: 600px;
+  padding: 1rem 0.5rem 2rem;
+  margin: auto;
+  margin-top: 30px;
+  background-color: var(--color-surface);
+
+  .closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3px;
+  }
+
+  h2 {
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+  }
+
+  .checkboxWrapper {
+    display: flex;
+    justify-content: center;
+    .checkboxArea {
+      text-align: left;
+    }
+
+    label {
+      font-family: "Roboto", sans-serif;
+    }
+    input {
+      margin-right: 0.5rem;
+      font-size: 1.3em;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  $icon-size: 16px;
+  .loadButton {
+    display: flex;
+    margin: 0;
+    display: flexbox;
+    align-items: center;
+    img {
+      display: inline;
+      width: $icon-size;
+      height: $icon-size;
+      padding: 0.25rem;
+    }
+  }
+  .credits {
+    a {
+      color: var(--color-text);
+    }
+  }
+}
