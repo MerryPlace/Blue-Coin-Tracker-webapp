@@ -9,7 +9,7 @@ import styles from "./CoinDetail.module.scss";
 
 function Template({ coin, guideURL, coinChecked, onCoinChange }) {
   const { navCoin, navLevel } = React.useContext(NavigationContext);
-  const [showVideo, setVideoToggle] = React.useState(true);
+  const [showVideo, setVideoToggle] = React.useState(false);
 
   return (
     <div className={styles.coinDetailPage}>
@@ -62,8 +62,8 @@ function MediaArea({ navLevel, navCoin, coin, showVideo }) {
   return (
     <>
       <img
-        className={showVideo && styles.hidden}
-        srcset={`${mobileImageURL} 640w, ${desktopImageURL} 1280w`}
+        className={(showVideo && styles.hidden) || undefined}
+        srcSet={`${mobileImageURL} 640w, ${desktopImageURL} 1280w`}
         sizes="(max-width: 640px) 100vw"
         src={desktopImageURL}
         alt=""
@@ -72,10 +72,8 @@ function MediaArea({ navLevel, navCoin, coin, showVideo }) {
         <iframe
           src={`https://www.youtube.com/embed/${coin.video}`}
           title="YouTube video player"
-          frameborder="0"
           allow="fullscreen; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen={true}
+          referrerPolicy="strict-origin-when-cross-origin"
         ></iframe>
       )}
     </>

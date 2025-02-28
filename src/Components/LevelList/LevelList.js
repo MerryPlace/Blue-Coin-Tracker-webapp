@@ -14,10 +14,10 @@ function LevelList({ levels }) {
   return (
     <>
       {navLevel !== null && <CoinList level={levels[navLevel]} />}
-      <div className={navLevel !== null && styles.hidden}>
+      <div className={(navLevel !== null && styles.hidden) || undefined}>
         <div className={styles.totalCollected}>
           <h2>
-            <label for="totalComplete">Coin {totalComplete}% Get!</label>
+            <label htmlFor="totalComplete">Coin {totalComplete}% Get!</label>
           </h2>
           <progress
             id="totalComplete"
@@ -29,7 +29,7 @@ function LevelList({ levels }) {
         <div className={styles["level-list-container"]}>
           {["dp", "bh", "rh", "gb", "nb", "pp", "sb", "pv", "cm"].map(
             (levelCode) => (
-              <div className={styles["level-container"]}>
+              <div key={levelCode} className={styles["level-container"]}>
                 <button
                   key={levelCode}
                   onClick={() => {
