@@ -18,3 +18,20 @@ This project was originally developed as an android app written in Kotlin. Due t
 - Description/Guide for each coin (accessed by tapping on a coin in the list)
 - Image for each blue coin, displaying the location of the coin in the level
 - Video of each blue coin being collected (recorded by us)
+- Accessibility settings (disable the silly styling)
+- Save file backup
+- Dark/light mode
+
+## Screenshots
+
+Level List - displays your completion percentage for each level
+![Screenshot_20250228-160411 (Medium)](https://github.com/user-attachments/assets/0076b491-2bf4-409b-85c5-6c110a845125)
+
+Coin Detail - Provides a guide, an image, and a video to help you find your coin
+![Theming](https://github.com/user-attachments/assets/99a49bfd-9288-4b37-8d1f-4d6cf3bb0c7d)
+
+Coin List - a coin checklist with named coins to help you keep track
+![theming 2](https://github.com/user-attachments/assets/ded36692-6dd9-4ec6-81ea-b7d560cb09ad)
+
+Settings - Accessibility/Theme settings and save backup
+![settings](https://github.com/user-attachments/assets/dff455d8-0a1d-4313-9720-0a20a8da1f99)
